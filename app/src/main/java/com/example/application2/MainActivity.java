@@ -10,12 +10,13 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     Button repobutton;
+    Button appbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        appbutton= findViewById(R.id.appbtn);
         repobutton = findViewById(R.id.repobtn);
 
         repobutton.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new
                         Intent( Intent.ACTION_VIEW , webpage);
                         startActivity(intent);
+            }
+        });
+
+        appbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+                startActivity(intent);
+
             }
         });
     }
