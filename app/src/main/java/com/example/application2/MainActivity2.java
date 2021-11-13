@@ -3,6 +3,7 @@ package com.example.application2;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -79,6 +80,8 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         finishbutton=findViewById(R.id.finishbtn);
         finishbutton.setOnClickListener(this);
        //t.setText(alphabets[3]);
+
+
 
     }
 
@@ -236,6 +239,9 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
                     }
                 }
             case R.id.finishbtn:
+                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+                intent.putExtra("Score",score);
+                startActivity(intent);
 
         }
     }
